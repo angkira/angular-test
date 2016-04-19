@@ -1,0 +1,10 @@
+
+<form name="editForm" novalidate="novalidate" ng-if="model.editing" class="add-form">
+  <h1>Note #<span ng-bind="model.currentNote.id"></span></h1>
+  <input type="number" ng-required="ng-required" autofocus="autofocus" placeholder="sum" name="num" min="-1000" max="1000" ng-model="model.currentNote.val"/><span ng-show="(!model.currentNote.val)&amp;&amp;editForm.num.$dirty" class="invalid">Wrong value</span>
+  <textarea placeholder="Comment" ng-model="model.currentNote.comment"></textarea>
+  <div class="controls">
+    <button ng-disabled="(!model.currentNote.val)||(editForm.$invalid)" ng-click="model.submit()" class="btn">Save</button>
+    <button ng-click="model.cancel()" class="btn btn-cncl">Cancel</button>
+  </div>
+</form>
